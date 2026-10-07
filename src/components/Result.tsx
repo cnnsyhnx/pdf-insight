@@ -24,6 +24,9 @@ interface Props {
   renderCrop: (key: string) => ReactNode;
 }
 
+/** Punctuation that belongs to the end of the words before it: never the first thing on a line. */
+const TRAILING_PUNCTUATION = /^[,.;:!?)\]…”’»]+/;
+
 function Section({ title, children }: { title: string; children: ReactNode }) {
   const id = useId();
   return (
@@ -53,19 +56,25 @@ export function Result(props: Props) {
   summaryMarks.forEach((mark, i) => {
     const key = `s${i}`;
     if (mark.start > at) summaryParts.push(summary.slice(at, mark.start));
+    // A highlight is a button, and browsers may break the line right after it, leaving a comma to open the next
+    // line. The punctuation that follows a highlight stays on its line.
+    const next = summaryMarks[i + 1]?.start ?? summary.length;
+    const glued = TRAILING_PUNCTUATION.exec(summary.slice(mark.end, next))?.[0] ?? '';
     summaryParts.push(
-      <Mark
-        key={key}
-        id={`mark-${key}`}
-        label={copy.result.showOnPage(mark.source.found.page, mark.source.quote)}
-        active={activeKey === key}
-        beat={beats?.[i] ?? null}
-        onPick={pick(key)}
-      >
-        {summary.slice(mark.start, mark.end)}
-      </Mark>,
+      <span key={key} className={styles.keep}>
+        <Mark
+          id={`mark-${key}`}
+          label={copy.result.showOnPage(mark.source.found.page, mark.source.quote)}
+          active={activeKey === key}
+          beat={beats?.[i] ?? null}
+          onPick={pick(key)}
+        >
+          {summary.slice(mark.start, mark.end)}
+        </Mark>
+        {glued}
+      </span>,
     );
-    at = mark.end;
+    at = mark.end + glued.length;
   });
   if (at < summary.length) summaryParts.push(summary.slice(at));
 

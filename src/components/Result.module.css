@@ -55,6 +55,11 @@
   text-wrap: pretty;
 }
 
+/* A highlight and the punctuation after it share a line. */
+.keep {
+  white-space: nowrap;
+}
+
 .points {
   display: grid;
   gap: var(--space-2);
@@ -133,8 +138,10 @@
   margin: 4px 0 0 calc(11em + var(--space-4));
 }
 
+/* The quotation marks stay with the quoted words. */
 .quote {
   min-width: 0;
+  white-space: nowrap;
   font-family: var(--font-read);
   font-size: 15px;
   font-style: italic;
