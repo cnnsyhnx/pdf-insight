@@ -1,0 +1,67 @@
+PDF Insight
+Copyright (c) 2026 Can Seyhan (Jan), https://github.com/cnnsyhnx
+All rights reserved.
+
+This repository and everything the author created in it (source code, tests, interface copy,
+illustrations, animations, sounds, documentation and visual identity) is the author's proprietary
+work. No licence is granted, either expressly or by implication.
+
+Without the author's prior written permission, no one may use, copy, modify, merge, publish,
+distribute, sublicense, sell, host or deploy this work, build on it, or use it to train or evaluate
+machine-learning models, for any purpose, commercial or not.
+
+The only exception: Greywolf Group may view this repository and use its public demo solely to
+evaluate the author's application for the Vibe Coder position. This matches the terms of the
+recruitment task: the solution serves only that evaluation, and all rights to it, including the
+economic rights of the author, stay with the author. This permission ends when that recruitment ends.
+
+The repository is public only so that it can be reviewed. GitHub's Terms of Service let GitHub users
+view public repositories and fork them on GitHub; that grants no other right.
+
+Not covered by this notice: packages, libraries and fonts by other authors, which keep their own
+licences (see package.json and package-lock.json; the fonts are under the SIL Open Font License 1.1
+and pdf.js under the Apache License 2.0), and the short excerpts from Greywolf Group's task materials
+used in the tests (the example JSON from the brief and phrases from its test PDF), which belong to
+Greywolf Group.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+Contact for permissions: https://github.com/cnnsyhnx
+
+-------------------------------------------------------------------------------------------------
+
+Wersja polska (tłumaczenie pomocnicze; w razie rozbieżności rozstrzyga wersja angielska)
+
+PDF Insight
+Copyright (c) 2026 Can Seyhan (Jan), https://github.com/cnnsyhnx
+Wszelkie prawa zastrzeżone.
+
+To repozytorium i wszystko, co autor w nim stworzył (kod źródłowy, testy, teksty interfejsu,
+ilustracje, animacje, dźwięki, dokumentacja i identyfikacja wizualna), stanowi utwór, do którego
+autorskie prawa majątkowe przysługują wyłącznie autorowi. Autor nie udziela żadnej licencji,
+ani wyraźnie, ani w sposób dorozumiany.
+
+Bez uprzedniej pisemnej zgody autora nikt nie może tego utworu używać, kopiować, zmieniać,
+łączyć z innymi utworami, publikować, rozpowszechniać, sublicencjonować, sprzedawać, hostować
+ani wdrażać, tworzyć na jego podstawie nowych utworów ani wykorzystywać go do trenowania lub
+oceny modeli uczenia maszynowego, w żadnym celu, komercyjnym ani niekomercyjnym.
+
+Jedyny wyjątek: Greywolf Group może przeglądać to repozytorium i korzystać z jego publicznego
+demo wyłącznie w celu oceny kandydatury autora na stanowisko Vibe Coder. Odpowiada to zasadom
+zadania rekrutacyjnego: rozwiązanie służy tylko tej ocenie, a wszelkie prawa do niego, w tym
+autorskie prawa majątkowe, pozostają przy autorze. Zgoda wygasa z chwilą zakończenia tej
+rekrutacji.
+
+Repozytorium jest publiczne tylko po to, aby można je było ocenić. Regulamin serwisu GitHub
+pozwala użytkownikom serwisu oglądać publiczne repozytoria i tworzyć ich forki w tym serwisie;
+nie daje to żadnych innych praw.
+
+Ta informacja nie obejmuje pakietów, bibliotek i fontów innych autorów, które podlegają własnym
+licencjom (zob. package.json i package-lock.json; fonty są objęte licencją SIL Open Font
+License 1.1, a pdf.js licencją Apache 2.0), ani krótkich fragmentów materiałów zadania
+Greywolf Group użytych w testach (przykładu JSON z briefu i fragmentów testowego PDF), które
+należą do Greywolf Group.
+
+UTWÓR JEST UDOSTĘPNIANY W STANIE, W JAKIM SIĘ ZNAJDUJE, BEZ JAKICHKOLWIEK GWARANCJI.
+
+Kontakt w sprawie zgody: https://github.com/cnnsyhnx
