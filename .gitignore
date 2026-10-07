@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+.wrangler
+*.local
+
+# Local design fixtures for `?demo` (a real PDF and a saved answer): never committed, never deployed.
+public/demo/
+
+# Secrets never enter the repo: locally the API keys live in .env.local, in production in Cloudflare Worker secrets.
+.env
+.env.*
+!.env.example
+.dev.vars*

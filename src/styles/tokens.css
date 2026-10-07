@@ -1,0 +1,44 @@
+/*
+ * PDF Insight brand tokens: the single source for color, type, space and motion.
+ * Contrast (WCAG): --ink-3 on --paper is 5.1:1, --ink-2 on --desk is 7.2:1, --ink on --marker is 15:1.
+ */
+:root {
+  /* Surfaces: white paper on a grey desk, like a document on a table. */
+  --paper: #ffffff;
+  --desk: #e9e9e5;
+
+  /* Ink */
+  --ink: #1b1b19;
+  --ink-2: #4a4a46;
+  --ink-3: #6e6e68;
+  --rule: #e3e3de;
+  --rule-strong: #cdcdc7;
+
+  /* The highlighter. Only ever under words that appear word for word in the document, and in the logo. */
+  --marker: #ffe93b;
+
+  /* Type */
+  --font-read: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Libre Franklin Variable', 'Libre Franklin', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  /* Space, on a 4 px grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Shape: one radius for every control. Paper keeps square corners. */
+  --radius: 6px;
+  --bar-height: 56px;
+
+  /* Motion: short and decided, no bounce. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-quick: 140ms;
+  --t-base: 220ms;
+}

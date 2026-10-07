@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .ink { fill: #1b1b19; }
+    @media (prefers-color-scheme: dark) { .ink { fill: #f1f0ec; } }
+  </style>
+  <rect class="ink" x="5" y="7.5" width="22" height="3" rx="1.5"/>
+  <path d="M6.5 14.5H28.5L26 24.5H4Z" fill="#ffe93b"/>
+  <!-- Text under a highlighter stays dark on any background, so this line never turns light. -->
+  <rect x="6.5" y="18" width="16" height="3" rx="1.5" fill="#1b1b19"/>
+</svg>
