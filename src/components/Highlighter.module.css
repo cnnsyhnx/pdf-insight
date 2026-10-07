@@ -1,0 +1,12 @@
+.pen {
+  overflow: visible;
+}
+
+.cap {
+  transition: transform var(--t-base) var(--ease-out);
+}
+
+/* Pulled straight off along the axis, by a little more than the nib's length. */
+.uncapped .cap {
+  transform: translateX(-44px);
+}

@@ -1,0 +1,255 @@
+.result {
+  display: flex;
+  flex-direction: column;
+}
+
+.note {
+  margin-bottom: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  background: #f4f4f1;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.meta {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.title {
+  margin-top: var(--space-2);
+  font-family: var(--font-read);
+  font-weight: 600;
+  font-size: 31px;
+  line-height: 1.16;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.legend {
+  margin-top: var(--space-4);
+  max-width: 50ch;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.section {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+}
+
+.sectionTitle {
+  margin-bottom: var(--space-3);
+  font-size: 13px;
+  font-weight: 620;
+}
+
+.summary {
+  font-family: var(--font-read);
+  font-size: 18.5px;
+  line-height: 1.66;
+  text-wrap: pretty;
+}
+
+.points {
+  display: grid;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+/* A short rule as the bullet, hung outside the text so lines align. */
+.points li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--font-read);
+  font-size: 16.5px;
+  line-height: 1.55;
+}
+
+.points li::before {
+  content: '';
+  position: absolute;
+  top: 0.78em;
+  left: 1px;
+  width: 7px;
+  height: 1.5px;
+  background: var(--ink-3);
+}
+
+.rows {
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.row:first-child {
+  padding-top: 0;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.rowMain {
+  display: grid;
+  grid-template-columns: 11em minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: baseline;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.unit {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-weight: 450;
+  letter-spacing: 0.02em;
+}
+
+.context {
+  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.citation {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin: 4px 0 0 calc(11em + var(--space-4));
+}
+
+.quote {
+  min-width: 0;
+  font-family: var(--font-read);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.pageRef {
+  flex: none;
+  margin-left: auto;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 3px;
+  background: none;
+  color: var(--ink-3);
+  font: 500 12px/1.2 var(--font-mono);
+}
+
+button.pageRef:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.missing {
+  margin: 4px 0 0 calc(11em + var(--space-4));
+  color: var(--ink-3);
+  font-family: var(--font-read);
+  font-size: 13.5px;
+  font-style: italic;
+}
+
+.missingSmall {
+  flex: none;
+  color: var(--ink-3);
+  font-family: var(--font-read);
+  font-size: 12.5px;
+  font-style: italic;
+}
+
+.parties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.subTitle {
+  margin-bottom: var(--space-2);
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.nameList {
+  padding: 0;
+  list-style: none;
+}
+
+.name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.name:last-child {
+  border-bottom: 0;
+}
+
+.nameText {
+  min-width: 0;
+  font-family: var(--font-read);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.keywords {
+  font-family: var(--font-read);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.none {
+  color: var(--ink-3);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: var(--space-7);
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 959px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .summary {
+    font-size: 17.5px;
+  }
+
+  .rowMain {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .citation,
+  .missing {
+    margin-left: 0;
+  }
+
+  .parties {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+}

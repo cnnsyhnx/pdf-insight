@@ -1,0 +1,80 @@
+/*
+ * The highlight: a band of marker ink behind the words, both ends cut at the nib angle
+ * (104deg = 90 + 14, the same 14° as the strokes on the pages and the logo).
+ */
+.mark {
+  all: unset;
+  display: inline;
+  cursor: pointer;
+  color: inherit;
+  background-image: linear-gradient(
+    104deg,
+    transparent 0.22em,
+    var(--marker) 0.24em,
+    var(--marker) calc(100% - 0.24em),
+    transparent calc(100% - 0.22em)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 76%;
+  background-position: 0 62%;
+  margin: 0 -0.24em;
+  padding: 0 0.24em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* The narrow edge of the same nib: a thin line under the words, used for quotations. */
+.narrow {
+  background-size: 100% 0.3em;
+  background-position: 0 94%;
+}
+
+mark.mark {
+  cursor: text;
+}
+
+button.mark:hover,
+.active {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.active {
+  text-decoration-thickness: 2px;
+}
+
+.mark:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Drawn left to right at the speed of a hand, never faded in. */
+.reveal {
+  animation: swipe var(--dur) var(--ease-in-out) var(--delay) both;
+}
+
+.narrow.reveal {
+  animation-name: swipe-narrow;
+}
+
+@keyframes swipe {
+  from {
+    background-size: 0% 76%;
+  }
+
+  to {
+    background-size: 100% 76%;
+  }
+}
+
+@keyframes swipe-narrow {
+  from {
+    background-size: 0% 0.3em;
+  }
+
+  to {
+    background-size: 100% 0.3em;
+  }
+}

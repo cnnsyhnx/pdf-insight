@@ -1,0 +1,78 @@
+.problem {
+  display: flex;
+  flex-direction: column;
+}
+
+.file {
+  margin-bottom: var(--space-3);
+  overflow-wrap: anywhere;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.title {
+  font-family: var(--font-read);
+  font-weight: 560;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.014em;
+  text-wrap: balance;
+}
+
+.detail {
+  margin-top: var(--space-4);
+  max-width: 34em;
+  color: var(--ink-2);
+  font-family: var(--font-read);
+  font-size: 18px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.primary,
+.quiet {
+  height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 560;
+  transition: background-color var(--t-quick) ease;
+}
+
+.primary {
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.primary:hover {
+  background: #34342f;
+}
+
+.quiet {
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+}
+
+.quiet:hover {
+  background: #f1f1ee;
+}
+
+@media (max-width: 959px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .primary,
+  .quiet {
+    flex: 1 1 100%;
+    height: 50px;
+  }
+}

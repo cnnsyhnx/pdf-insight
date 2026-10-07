@@ -1,0 +1,126 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Desktop: the reading column on the left, the document on its desk to the right; each scrolls on its own. */
+.workspace {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(400px, 600px) minmax(0, 1fr);
+}
+
+.left {
+  height: calc(100dvh - var(--bar-height));
+  overflow-y: auto;
+  border-right: 1px solid var(--rule);
+  scrollbar-gutter: stable;
+}
+
+.leftInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-7);
+}
+
+.right {
+  height: calc(100dvh - var(--bar-height));
+  overflow-y: auto;
+  background: var(--desk);
+}
+
+.tabs {
+  position: sticky;
+  top: var(--bar-height);
+  z-index: 9;
+  display: flex;
+  gap: var(--space-5);
+  height: 44px;
+  padding: 0 var(--space-4);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab[aria-selected='true'] {
+  color: var(--ink);
+}
+
+.tab[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--ink);
+}
+
+.count {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bottomBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 9;
+  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+
+.download {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 560;
+}
+
+@media (max-width: 959px) {
+  .workspace {
+    display: block;
+  }
+
+  .left,
+  .right {
+    height: auto;
+    overflow: visible;
+    border-right: 0;
+  }
+
+  .leftInner {
+    justify-content: flex-start;
+    padding: var(--space-6) var(--space-4) var(--space-7);
+  }
+
+  .right {
+    min-height: calc(100dvh - var(--bar-height) - 44px);
+  }
+
+  .below {
+    min-height: 0;
+  }
+}

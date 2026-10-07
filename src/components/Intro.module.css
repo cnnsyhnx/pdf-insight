@@ -1,0 +1,155 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-read);
+  font-weight: 560;
+  font-size: 46px;
+  line-height: 1.06;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+}
+
+.lead {
+  margin-top: var(--space-5);
+  max-width: 34em;
+  color: var(--ink-2);
+  font-family: var(--font-read);
+  font-size: 19px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.pickRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.pick {
+  height: 46px;
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 560;
+  transition: background-color var(--t-quick) ease;
+}
+
+.pick:hover {
+  background: #34342f;
+}
+
+.hint {
+  color: var(--ink-3);
+  font-size: 14px;
+}
+
+.privacy {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  max-width: 46ch;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-3);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.rights {
+  margin-top: var(--space-2);
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+.history {
+  margin-top: var(--space-7);
+}
+
+.historyTitle {
+  margin-bottom: var(--space-2);
+  font-size: 13px;
+  font-weight: 620;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--rule);
+}
+
+.open {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  padding: var(--space-3) 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.open:hover .name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.name {
+  overflow: hidden;
+  font-family: var(--font-read);
+  font-size: 16px;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+.remove {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--ink-3);
+}
+
+.remove:hover {
+  background: #f1f1ee;
+  color: var(--ink);
+}
+
+@media (max-width: 959px) {
+  .title {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .lead {
+    font-size: 17.5px;
+  }
+
+  .pick {
+    width: 100%;
+    height: 50px;
+  }
+}

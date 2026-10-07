@@ -1,0 +1,92 @@
+.pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-7) var(--space-6) var(--space-8);
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  animation: arrive 280ms var(--ease-out) both;
+}
+
+/* A page is laid on the desk: it settles into place. Paper is opaque, so it never fades in. */
+@keyframes arrive {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.paper {
+  position: relative;
+  isolation: isolate;
+  background: var(--paper);
+  box-shadow:
+    0 1px 1px rgb(0 0 0 / 0.05),
+    0 6px 18px rgb(0 0 0 / 0.07);
+}
+
+.canvas {
+  display: block;
+}
+
+/* Marker ink is a transparent dye: multiplying it over the page keeps the printed words black under the yellow. */
+.strokes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.stroke {
+  fill: var(--marker);
+}
+
+.reveal {
+  animation: draw var(--dur) var(--ease-in-out) var(--delay) both;
+}
+
+.redraw {
+  animation: draw 340ms var(--ease-in-out) both;
+}
+
+@keyframes draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hit {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.caption {
+  color: var(--ink-2);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 959px) {
+  .pane {
+    gap: var(--space-5);
+    padding: var(--space-5) var(--space-4) var(--space-7);
+  }
+}
