@@ -1,0 +1,6 @@
+/* Two catalogue cards side by side, above the file name, flush with the text column. */
+.scene {
+  width: min(100%, 340px);
+  height: auto;
+  margin-bottom: var(--space-6);
+}
