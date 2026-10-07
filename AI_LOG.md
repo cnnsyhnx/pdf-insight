@@ -42,6 +42,7 @@ Prompty były pisane po turecku; poniżej w tłumaczeniu, skrócone.
 6. **Animacja jak alfabet Morse’a.** Pierwsza wersja animacji czekania rysowała krótkie słowa jako zaokrąglone kreski i na zrzucie czytała się jak kreska, kropka, kreska. Poprawka: słowa od trzech znaków, proste końce i wąskie odstępy jak w maszynopisie. Test pilnuje, żeby żadne słowo nie było krótsze.
 7. **Skan pominięty bez słowa.** Strona 11 testowego PDF (Aneks nr 1) to obraz bez warstwy tekstowej i aplikacja po cichu ją pomijała, więc zmiana abonamentu z aneksu znikała z wyniku. OCR to punkt COULD, ale cisza była błędem. Teraz aplikacja wykrywa skany i informuje o nich podczas analizy, w wyniku i w JSON (`meta.scannedPages`).
 8. **Niepełne kwoty.** Przy poleceniu „every amount of money” model zwracał 6 kwot, a zaliczkę z najważniejszych punktów pomijał na liście kwot. Dokładniejsza instrukcja (warunki finansowe ustalone w dokumencie, a każda kwota i data z podsumowania także na liście) dała 10 kwot, wszystkie potwierdzone w PDF, w 11,8 s.
+9. **Przecinek na początku wiersza.** Przy sprawdzaniu demo na żywo przecinek po zakreślonej kwocie przeszedł do następnego wiersza, bo zakreślenie jest przyciskiem, a przeglądarka łamie wiersz zaraz po nim. Teraz zakreślenie i znak interpunkcyjny po nim zawsze stoją w jednym wierszu; sprawdzone w sześciu szerokościach ekranu.
 
 ## Jak sprawdzam pracę AI
 
