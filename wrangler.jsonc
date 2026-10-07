@@ -1,0 +1,24 @@
+// The analysis backend: a Cloudflare Worker, source in worker/src.
+// Keys: `npm run worker:dev` reads ANTHROPIC_API_KEY and OPENAI_API_KEY from .env.local; in production they are
+// Worker secrets (`npx wrangler secret put ANTHROPIC_API_KEY`). They are never in this file or in the repo.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pdf-insight-api",
+  "main": "worker/src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "vars": {
+    // Only the demo may call the API from a browser (CORS); everything else gets 403. `npm run worker:dev` adds
+    // the local app for development only.
+    "ALLOWED_ORIGINS": "https://cnnsyhnx.github.io",
+    // Global cap: at most 20 documents per UTC day for the whole demo, so the API bill has a ceiling.
+    "DAILY_LIMIT": "20",
+    "ANTHROPIC_MODEL": "claude-sonnet-5-5",
+    "OPENAI_MODEL": "gpt-5.4-mini",
+  },
+  // Per-IP limit: 4 analyses a minute.
+  "ratelimits": [{ "name": "PER_IP", "namespace_id": "1001", "simple": { "limit": 4, "period": 60 } }],
+  // The daily counter (KV namespace "COUNTERS"). The id names the namespace; it is not a secret.
+  "kv_namespaces": [{ "binding": "COUNTERS", "id": "ab70a6ad0c2f48a8ab9a8c015a67e856" }],
+}
